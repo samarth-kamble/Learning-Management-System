@@ -3,8 +3,10 @@ import { LayoutDashboard } from "lucide-react";
 import { redirect } from "next/navigation";
 
 import { IconBadge } from "@/components/shared/icon-badge";
-import TitleForm from "@/components/shared/title-form";
+import { TitleForm } from "@/components/shared/title-form";
 import { db } from "@/lib/db";
+import { DescriptionForm } from "@/components/shared/description-form";
+import { ImageForm } from "@/components/shared/image-form";
 const CourseIdPage = async ({ params }: { params: { courseId: string } }) => {
   // Auth check for the teacher
   const { userId } = auth();
@@ -55,6 +57,8 @@ const CourseIdPage = async ({ params }: { params: { courseId: string } }) => {
             <h2 className="text-xl">Customize Your Course</h2>
           </div>
           <TitleForm initialData={course} courseId={course.id} />
+          <DescriptionForm initialData={course} courseId={course.id} />
+          <ImageForm initialData={course} courseId={course.id} />
         </div>
       </div>
     </div>
