@@ -4,8 +4,9 @@ import { auth } from "@clerk/nextjs/server";
 import { LayoutDashboard } from "lucide-react";
 import { redirect } from "next/navigation";
 import React from "react";
-import { TitleForm } from "../_components/TitleForm";
-import { DescriptionForm } from "../_components/DescriptionForm";
+import { TitleForm } from "./_components/TitleForm";
+import { DescriptionForm } from "./_components/DescriptionForm";
+import { ImageForm } from "./_components/ImageForm";
 
 const CourseIdPage = async ({ params }: { params: { courseId: string } }) => {
   const { userId } = await auth();
@@ -55,6 +56,7 @@ const CourseIdPage = async ({ params }: { params: { courseId: string } }) => {
           </div>
           <TitleForm initialData={course} courseId={course.id} />
           <DescriptionForm initialData={course} courseId={course.id} />
+          <ImageForm initialData={course} courseId={course.id} />
         </div>
       </div>
     </div>
