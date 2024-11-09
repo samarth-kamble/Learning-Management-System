@@ -15,6 +15,7 @@ import { ImageForm } from "./_components/ImageForm";
 import { CategoryForm } from "./_components/CategoryForm";
 import { PriceForm } from "./_components/PriceForm";
 import { AttachmentForm } from "./_components/AttachmentForm";
+import { ChaptersForm } from "./_components/ChapterForm";
 
 const CourseIdPage = async ({ params }: { params: { courseId: string } }) => {
   const { userId } = await auth();
@@ -99,7 +100,7 @@ const CourseIdPage = async ({ params }: { params: { courseId: string } }) => {
               <IconBadge icon={ListCheck} />
               <h2 className="text-xl">Course Chapter</h2>
             </div>
-            TODO: Add chapter form
+            <ChaptersForm initialData={course} courseId={course.id} />
           </div>
           <div>
             <div className="flex items-center gap-x-2">
