@@ -1,14 +1,21 @@
 "use client";
 
-import { ChartNoAxesCombined, Compass, Layout, List } from "lucide-react";
+import {
+  ChartNoAxesCombined,
+  CirclePlus,
+  Compass,
+  House,
+  Layout,
+  List,
+} from "lucide-react";
 import { usePathname } from "next/navigation";
 import { SidebarItem } from "./SidebarItem";
 
 const guestRoutes = [
   {
-    icon: Layout,
-    label: "Dashboard",
-    href: "/dashboard",
+    icon: House,
+    label: "Home",
+    href: "/home",
   },
   {
     icon: Compass,
@@ -19,8 +26,18 @@ const guestRoutes = [
 
 const teacherRoutes = [
   {
+    icon: Layout,
+    label: "Dashboard",
+    href: "/teacher/dashboard",
+  },
+  {
+    icon: CirclePlus,
+    label: "Create Course",
+    href: "/teacher/create",
+  },
+  {
     icon: List,
-    label: "Courses",
+    label: "All Courses",
     href: "/teacher/courses",
   },
   {
