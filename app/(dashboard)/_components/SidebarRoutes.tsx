@@ -28,7 +28,7 @@ const teacherRoutes = [
   {
     icon: Layout,
     label: "Dashboard",
-    href: "/teacher/dashboard",
+    href: "/teacher/overview",
   },
   {
     icon: CirclePlus,

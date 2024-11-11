@@ -2,10 +2,10 @@
 
 import axios from "axios";
 import { useState } from "react";
-import { useToast } from "@/hooks/use-toast";
 
 import { Button } from "@/components/ui/button";
 import { formatPrice } from "@/lib/format";
+import { useToast } from "@/hooks/use-toast";
 
 interface CourseEnrollButtonProps {
   price: number;
@@ -28,8 +28,8 @@ export const CourseEnrollButton = ({
       window.location.assign(response.data.url);
     } catch {
       toast({
-        title: " Error",
-        description: " Something went wrong. Please try again later.",
+        title: "An error occurred",
+        description: "Please try again later.",
         variant: "destructive",
       });
     } finally {
