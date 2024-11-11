@@ -1,7 +1,12 @@
 import React from "react";
+import Dashboard from "./_components/CardDataStat";
 
-const Page = () => {
-  return <div></div>;
+const page = () => {
+  return (
+    <div>
+      <Dashboard />
+    </div>
+  );
 };
 
-export default Page;
+export default page;
