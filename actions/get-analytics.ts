@@ -1,5 +1,6 @@
 import { db } from "@/lib/db";
 import { Course, Purchase } from "@prisma/client";
+import { getUser } from "./get-user";
 
 type PurchaseWithCourse = Purchase & {
   course: Course;
@@ -42,6 +43,8 @@ export const getAnalytics = async (userId: string) => {
 
     const totalRevenue = data.reduce((acc, curr) => acc + curr.total, 0);
     const totalSales = purchases.length;
+
+    const user = await getUser();
 
     return {
       data,

@@ -7,8 +7,15 @@ const clerkClient = createClerkClient({
 export const getUser = async () => {
   try {
     const userList = await clerkClient.users.getUserList();
-    const name = userList.totalCount;
-    // console.log(name);
+
+    const users = userList.data.map((user: any) => ({
+      id: user.id,
+      firstName: user.firstName,
+      lastName: user.lastName,
+      createdAt: user.createdAt,
+    }));
+
+    console.log(users);
     console.log(userList);
   } catch (error) {
     console.log("[GET_USER]", error);
