@@ -1,9 +1,9 @@
 "use client";
 import React, { useState } from "react";
-import Logo from "../../../public/assets/logo.svg";
-import lock from "../../../public/assets/lock.svg";
-import Hamburger from "../../../public/assets/hamburgerMenu.svg";
-import Close from "../../../public/assets/close.svg";
+import Logo from "../../../../public/assets/logo.svg";
+import lock from "../../../../public/assets/lock.svg";
+import Hamburger from "../../../../public/assets/hamburgerMenu.svg";
+import Close from "../../../../public/assets/close.svg";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
@@ -19,7 +19,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="w-full h-[85px] bg-white shadow-sm">
+    <div className="sticky w-full h-[85px] bg-white shadow-sm">
       <div className="p-4 md:max-w-[1080px] max-w-[400px] m-auto w-full h-full flex justify-between items-center">
         <Image src={Logo} alt="logo" className="h-[25px] cursor-pointer" />
         <div className="flex items-center">

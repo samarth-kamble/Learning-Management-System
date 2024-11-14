@@ -1,5 +1,5 @@
 import React from "react";
-import Achieve from "../../../public/assets/achievement.png";
+import Achieve from "../../../../public/assets/achievement.png";
 import { FaGraduationCap } from "react-icons/fa";
 import { AiFillVideoCamera } from "react-icons/ai";
 import { FaPeopleCarry } from "react-icons/fa";

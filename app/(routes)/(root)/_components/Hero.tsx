@@ -1,5 +1,5 @@
 import React from "react";
-import heroImg from "../../../public/assets/heroImg.png";
+import heroImg from "../../../../public/assets/heroImg.png";
 import { AiOutlineSearch } from "react-icons/ai";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";

@@ -1,5 +1,5 @@
 import React from "react";
-import cta from "../../../public/assets/cta.png";
+import cta from "../../../../public/assets/cta.png";
 import Image from "next/image";
 
 const CTA = () => {

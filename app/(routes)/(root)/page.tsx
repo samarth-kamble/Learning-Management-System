@@ -7,8 +7,7 @@ import Achievement from "./_components/Achievement";
 
 const Home = () => {
   return (
-    <div className="flex flex-col gap-y-3">
-      <Navbar />
+    <div>
       <HeroSection />
       {/* TODO : ADD Course Section */}
       <Achievement />
