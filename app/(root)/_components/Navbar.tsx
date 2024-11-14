@@ -48,14 +48,18 @@ const Navbar = () => {
             </div>
           ) : (
             <div className="flex gap-4">
-              <Button
-                className="flex border border-[240136] justify-center items-center bg-transparent px-6 gap-2 py-4"
-                variant={"ghost"}
-              >
-                <Image src={lock} alt="lock" />
-                Login
-              </Button>
-              <Button className="px-8 py-5">Sign Up</Button>
+              <Link href={"/sign-in"}>
+                <Button
+                  className="flex border border-[#240136] justify-center items-center bg-transparent px-6 gap-2 py-4"
+                  variant={"ghost"}
+                >
+                  <Image src={lock} alt="lock" />
+                  Login
+                </Button>
+              </Link>
+              <Link href={"/sign-up"}>
+                <Button className="px-8 py-4">Sign Up</Button>
+              </Link>
             </div>
           )}
         </div>
@@ -90,14 +94,18 @@ const Navbar = () => {
               </div>
             ) : (
               <>
-                <Button
-                  className="flex border border-[240136] justify-center items-center bg-transparent px-6 gap-2 py-4"
-                  variant={"ghost"}
-                >
-                  <Image src={lock} alt="lock" />
-                  Login
-                </Button>
-                <Button className="px-8 py-5">Sign Up</Button>
+                <Link href={"/sign-in"}>
+                  <Button
+                    className="flex border border-[240136] justify-center items-center bg-transparent px-6 gap-2 py-4"
+                    variant={"ghost"}
+                  >
+                    <Image src={lock} alt="lock" />
+                    Login
+                  </Button>
+                </Link>
+                <Link href={"/sign-up"}>
+                  <Button className="px-8 py-4">Sign Up</Button>
+                </Link>
               </>
             )}
           </div>
