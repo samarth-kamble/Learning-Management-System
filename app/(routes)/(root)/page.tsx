@@ -13,7 +13,6 @@ const Home = () => {
       <Achievement />
       <Categories />
       <CTA />
-      <Footer />
     </div>
   );
 };

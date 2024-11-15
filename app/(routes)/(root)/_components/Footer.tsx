@@ -1,74 +1,52 @@
 import Image from "next/image";
-
+import Link from "next/link";
 import React from "react";
-
-const Footer = () => {
+import Logo from "../../../../public/logo.svg";
+const Footer: React.FC = () => {
   return (
-    <footer className="bg-gray-100">
-      <div className="relative mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8 lg:pt-24">
-        <div className="lg:flex lg:items-end lg:justify-between">
-          <div>
-            <div className="flex justify-center text-teal-600 lg:justify-start">
-              <Image
-                src="/assets/logo.svg"
-                alt="logo"
-                width={150}
-                height={40}
-              />
-            </div>
-
-            <p className="mx-auto mt-6 max-w-md text-center leading-relaxed text-gray-500 lg:text-left">
-              A comprehensive Learning Management System (LMS) designed to
-              streamline online education, providing a user-friendly platform
-              for managing courses, tracking student progress.
-            </p>
-          </div>
-
-          <ul className="mt-12 flex flex-wrap justify-center gap-6 md:gap-8 lg:mt-0 lg:justify-end lg:gap-12">
+    <footer className="bg-white rounded-lg shadow m-4">
+      <div className="w-full max-w-screen-xl mx-auto p-4 md:py-8">
+        <div className="sm:flex sm:items-center sm:justify-between">
+          <Link
+            href="https://flowbite.com/"
+            className="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse"
+          >
+            <Image src={Logo} className="h-8" alt="Flowbite Logo" />
+            {/* <span className="self-center text-2xl font-semibold whitespace-nowrap">
+              Flowbite
+            </span> */}
+          </Link>
+          <ul className="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0">
             <li>
-              <a
-                className="text-gray-700 transition hover:text-gray-700/75"
-                href="/"
-              >
-                {" "}
-                Home{" "}
+              <a href="/about" className="hover:underline me-4 md:me-6">
+                About
               </a>
             </li>
             <li>
-              <a
-                className="text-gray-700 transition hover:text-gray-700/75"
-                href="/about"
-              >
-                {" "}
-                About{" "}
+              <a href="/policy" className="hover:underline me-4 md:me-6">
+                Privacy Policy
               </a>
             </li>
-
             <li>
-              <a
-                className="text-gray-700 transition hover:text-gray-700/75"
-                href="/search"
-              >
-                {" "}
-                Course{" "}
+              <a href="#" className="hover:underline me-4 md:me-6">
+                Licensing
               </a>
             </li>
-
             <li>
-              <a
-                className="text-gray-700 transition hover:text-gray-700/75"
-                href="/faq"
-              >
-                {" "}
-                FAQ{" "}
+              <a href="#" className="hover:underline">
+                Contact
               </a>
             </li>
           </ul>
         </div>
-
-        <p className="mt-12 text-center text-sm text-gray-500 lg:text-right">
-          Copyright &copy; 2024. All rights reserved.
-        </p>
+        <hr className="my-6 border-gray-200 sm:mx-auto lg:my-8" />
+        <span className="block text-sm text-gray-500 sm:text-center">
+          © 2023{" "}
+          <Link href="/" className="hover:underline">
+            Logoipsum™
+          </Link>
+          . All Rights Reserved.
+        </span>
       </div>
     </footer>
   );

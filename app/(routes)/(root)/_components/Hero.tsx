@@ -26,10 +26,7 @@ const HeroSection = () => {
               className="my-2 w-full px-5 py-3 border border-solid border-neutral-300 bg-transparent bg-clip-padding text-base font-normal text-neutral-700 outline-none placeholder:text-neutral-500"
               placeholder="Search for Courses Here"
             />
-            <Button
-              variant={"ghost"}
-              className="h-[51px] w-[51px] ml-2 bg-green-400"
-            >
+            <Button className="h-[51px] w-[51px] ml-2 bg-blue-600 hover:bg-blue-300">
               <AiOutlineSearch
                 size={30}
                 className="icon"
