@@ -1,8 +1,12 @@
+"use client";
 import React from "react";
 import cta from "../../../../public/assets/cta.png";
 import Image from "next/image";
+import { useAuth } from "@clerk/nextjs";
+import Link from "next/link";
 
 const CTA = () => {
+  const { isSignedIn } = useAuth();
   return (
     <section className="w-full bg-white py-24 p-4 items-center">
       <div className="md:max-w-[1100px] m-auto grid md:grid-cols-2 gap-8 max-w-[400px]">
@@ -17,9 +21,19 @@ const CTA = () => {
             <p className="py-2 text-lg text-gray-900">
               Various versions have evolved over the years
             </p>
-            <button className="max-[780px]:w-full px-8 text-white py-3 bg-[#208446]">
-              Sign up for free
-            </button>
+            {isSignedIn ? (
+              <Link href={"/search"}>
+                <button className="max-[780px]:w-full px-8 text-white py-3 bg-[#208446]">
+                  Go To Course
+                </button>
+              </Link>
+            ) : (
+              <Link href={"/sign-up"}>
+                <button className="max-[780px]:w-full px-8 text-white py-3 bg-[#208446]">
+                  Sign up for free
+                </button>
+              </Link>
+            )}
           </div>
         </div>
       </div>

@@ -1,7 +1,12 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const Logo = () => {
-  return <Image height={130} width={130} alt="Logo" src="/logo.svg" />;
+  return (
+    <Link href="/">
+      <Image height={40} width={40} alt="Logo" src="/logo.png" />
+    </Link>
+  );
 };
 
 export default Logo;

@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import Logo from "../../../../public/logo.svg";
+import Logo from "../../../../public/LOGO.png";
 import { Button } from "@/components/ui/button";
 import { useAuth, UserButton } from "@clerk/nextjs";
 import { LogIn, SquareArrowOutUpRight, UserPlus } from "lucide-react";
@@ -19,10 +19,10 @@ const Navbar: React.FC = () => {
           href="/"
           className="flex items-center space-x-3 rtl:space-x-reverse"
         >
-          <Image src={Logo} className="h-8" alt="Flowbite Logo" />
-          {/* <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
-            Flowbite
-          </span> */}
+          <Image src={Logo} className="h-7 w-10" alt="Flowbite Logo" />
+          <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+            VIT
+          </span>
         </Link>
         <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
           {isSignedIn ? (
@@ -101,10 +101,18 @@ const Navbar: React.FC = () => {
             </li>
             <li>
               <Link
-                href="/courses"
+                href="/search"
                 className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
               >
                 Courses
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/chatbot"
+                className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+              >
+                Chatbot
               </Link>
             </li>
             <li>
