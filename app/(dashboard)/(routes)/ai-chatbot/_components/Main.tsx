@@ -3,6 +3,7 @@ import { useContext } from "react";
 import "./App.css";
 import { Context } from "@/context/Context";
 import { SendHorizontal, Sparkle, Sparkles, User, User2 } from "lucide-react";
+import { useUser } from "@clerk/nextjs";
 
 const Main = () => {
   const {
@@ -18,6 +19,8 @@ const Main = () => {
   const handleCardClick = (promptText: string) => {
     setInput(promptText);
   };
+
+  const { user } = useUser();
   return (
     <div className="main overflow-scroll h-[57vh]">
       <div className="main-container">
@@ -25,7 +28,9 @@ const Main = () => {
           <>
             <div className="greet">
               <p>
-                <span>Hello , Dev </span>
+                <span>
+                  Hello ,{user?.firstName} {user?.lastName}
+                </span>
               </p>
               <p>How Can i Help You Today?</p>
             </div>
