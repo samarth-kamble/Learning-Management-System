@@ -1,4 +1,5 @@
 const { withUt } = require("uploadthing/tw");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = withUt({

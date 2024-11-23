@@ -1,6 +1,7 @@
 "use client";
 
 import {
+  BotMessageSquare,
   ChartNoAxesCombined,
   CirclePlus,
   Compass,
@@ -21,6 +22,11 @@ const guestRoutes = [
     icon: Compass,
     label: "Browse",
     href: "/search",
+  },
+  {
+    icon: BotMessageSquare,
+    label: "ChatBot",
+    href: "/ai-chatbot",
   },
 ];
 
