@@ -8,6 +8,7 @@ import {
   House,
   Layout,
   List,
+  MessageSquare,
 } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { SidebarItem } from "./SidebarItem";
@@ -27,6 +28,11 @@ const guestRoutes = [
     icon: BotMessageSquare,
     label: "ChatBot",
     href: "/ai-chatbot",
+  },
+  {
+    icon: MessageSquare,
+    label: "Ask Doubt",
+    href: "/ask-doubt",
   },
 ];
 

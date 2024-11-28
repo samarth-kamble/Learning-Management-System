@@ -13,6 +13,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { api } from "@/convex/_generated/api";
+import { useToast } from "@/hooks/use-toast";
 import { useUser } from "@clerk/nextjs";
 import axios from "axios";
 import { useAction, useMutation } from "convex/react";
@@ -21,6 +22,7 @@ import React, { useState } from "react";
 import uuid4 from "uuid4";
 
 const UploadPDF = () => {
+  const { toast } = useToast();
   const { user } = useUser();
   const [loading, setLoading] = useState(false);
   const [file, setFile] = useState<File | null>(null);
@@ -76,6 +78,12 @@ const UploadPDF = () => {
       console.log(embeddedResult);
       setLoading(false);
       setOpen(false);
+
+      toast({
+        title: "File uploaded successfully",
+        description: "Your file has been uploaded successfully",
+        variant: "default",
+      });
     } catch (error) {
       console.error("Upload error:", error);
       setLoading(false);

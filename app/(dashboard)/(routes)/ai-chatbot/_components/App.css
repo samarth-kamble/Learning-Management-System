@@ -1,6 +1,6 @@
 .main {
   flex: 1;
-  min-height: 85vh;
+  min-height: 91vh;
   padding-bottom: 2vh;
   position: relative;
 }
@@ -17,7 +17,7 @@
   border-radius: 50px;
 }
 .main-container {
-  max-width: 900px;
+  max-width: 920px;
   margin: auto;
 }
 .main-container .greet {

@@ -22,7 +22,7 @@ const Main = () => {
 
   const { user } = useUser();
   return (
-    <div className="main overflow-scroll h-[57vh]">
+    <div className="main overflow-scroll h-[58vh]">
       <div className="main-container">
         {!showResults ? (
           <>

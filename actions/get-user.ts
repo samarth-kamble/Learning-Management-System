@@ -14,9 +14,6 @@ export const getUser = async () => {
       lastName: user.lastName,
       createdAt: user.createdAt,
     }));
-
-    console.log(users);
-    console.log(userList);
   } catch (error) {
     console.log("[GET_USER]", error);
   }

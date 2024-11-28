@@ -14,16 +14,25 @@ import {
   Sparkles,
 } from "lucide-react";
 import "./Highlight.css";
-import { useAction } from "convex/react";
+import { useAction, useMutation } from "convex/react";
 import { api } from "@/convex/_generated/api";
 import { useParams } from "next/navigation";
 import { chatSession } from "@/lib/gemini";
+import { useToast } from "@/hooks/use-toast";
+import { useUser } from "@clerk/nextjs";
 
 const EditorExtension = ({ editor }: { editor: Editor }) => {
   const { fileId } = useParams();
   const SearchAI = useAction(api.myAction.search);
+  const { user } = useUser();
+  const addNotes = useMutation(api.notes.Addnotes);
+  const { toast } = useToast();
 
   const onAiClick = async () => {
+    toast({
+      title: "AI is working on your query",
+      variant: "default",
+    });
     const selectedText = editor.state.doc.textBetween(
       editor.state.selection.from,
       editor.state.selection.to,
@@ -58,6 +67,12 @@ const EditorExtension = ({ editor }: { editor: Editor }) => {
     editor.commands.setContent(
       AllText + "<p> <strong>Answer:</strong>" + FinalAnswer + "</p>"
     );
+
+    addNotes({
+      notes: editor.getHTML(),
+      fileId: fileId as string,
+      createdBy: user?.primaryEmailAddress?.emailAddress ?? "",
+    });
   };
   return (
     editor && (
