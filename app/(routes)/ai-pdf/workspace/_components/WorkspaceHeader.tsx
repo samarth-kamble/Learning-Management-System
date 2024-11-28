@@ -13,7 +13,6 @@ const WorkspaceHeader = ({ fileName }: { fileName: any }) => {
         alt="VIT Logo"
       />
       <h2 className="font-bold">{fileName}</h2>
-
       <UserButton afterSignOutUrl="/" />
     </div>
   );
